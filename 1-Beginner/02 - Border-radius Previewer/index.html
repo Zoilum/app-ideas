@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <select type="number" placeholder="border style" onchange="setBorderStyle('Top', this.value)">
+    </select>
+    <div class="square-container">
+        <div class="controls-wrapper">
+            <div>
+                <input type="number" placeholder="border radius value" oninput="setBorderRadius('TopLeft', this.value)">
+            </div>
+                <select type="number" placeholder="border style" onchange="setBorderStyle('Left', this.value)">
+                </select>
+            <div>
+                <input type="number" placeholder="border radius value" oninput="setBorderRadius('BottomLeft', this.value)">
+            </div>
+        </div>
+            <div class="square"></div>
+        <div class="controls-wrapper">
+            <div>
+                <input type="number" placeholder="border radius value" oninput="setBorderRadius('TopRight', this.value)">
+            </div>
+            <select type="number" placeholder="border style" onchange="setBorderStyle('Right', this.value)">
+            </select>
+            <div>
+                <input type="number" placeholder="border radius value" oninput="setBorderRadius('BottomRight', this.value)">
+            </div>
+        </div>
+    </div>
+    <select type="number" placeholder="border style" onchange="setBorderStyle('Bottom', this.value)"></select>
+    <div class="css-text">
+        <div class="clipboard-wrapper">
+            <span>Copy to Clipboard!</span>
+            <div class="clipboard" onclick=""></div>
+        </div>
+        <p>.square { </p>
+        <code>
+        </code>
+        <p>}</p>
+    </div>
+</div>
+    <script type="module" src="main.js"></script>
+</body>
+<style>
+    body {
+        margin: 0;
+    }
+    input {
+        width: 100%;
+    }
+    select {
+        margin: 20px;
+    }
+    .square {
+        border: 1px solid red;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 1px;
+    }
+    .controls-wrapper {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+    }
+    .square-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .css-text {
+        padding: 20px;
+        background: #eee;
+        flex-basis: 50%;
+        margin: 20px auto;
+    }
+    code {
+        text-align: left;
+        margin-left: 10px;
+    }
+    .clipboard-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .clipboard {
+        width: 10px;
+        height: 10px;
+        background: red;
+        margin-left: 5px;
+    }
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+</html>

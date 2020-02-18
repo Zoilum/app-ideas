@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Binary to Decimal Base</title>
+</head>
+<body>
+<form>
+    <input type="text" minlength="1" maxlength="8" size="10" required>
+    <button>Submit</button>
+    <p></p>
+</form>
+</body>
+</html>
+<script>
+    window.onload = function () {
+			const form = document.querySelector('form');
+			form.onsubmit = e => {
+				e.preventDefault();
+                const inputValue = e.target.querySelector('input').value;
+                const paragraph = e.target.querySelector('p');
+                if (/^[0-1]{1,8}$/.test(inputValue)) {
+                  paragraph.textContent = parseInt(+inputValue, 2);
+                } else {
+                  paragraph.textContent = `Please enter only 0's and/or 1's`;
+                }
+			}
+		};
+</script>
